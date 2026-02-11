@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro PPE</title>
+    <link rel="stylesheet" href="./assets/css/register.css">
+</head>
+<body>
+
+<div class="container">
+    <img src="./assets/img/logo.png" alt="Logo WorkSafe">
+    <h2>Registro de Usuario</h2>
+    <div id="error" style="display:none;color:#b00020;margin-bottom:12px;"></div>
+
+    <form action="register.php" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Correo" required>
+         <input type="password" name="password" placeholder="Contraseña" required
+             pattern="(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{6,}"
+             title="La contraseña debe contener al menos una letra mayúscula y un símbolo. Mínimo 6 caracteres.">
+         <input type="text" name="telefono" placeholder="Número de teléfono" required
+             pattern="9[0-9]{8}" maxlength="9" minlength="9"
+             title="El teléfono debe comenzar con 9 y tener 9 dígitos en total">
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <script>
+        (function(){
+            const params = new URLSearchParams(window.location.search);
+            const err = params.get('error');
+            if (err) {
+                const el = document.getElementById('error');
+                el.textContent = err;
+                el.style.display = 'block';
+                history.replaceState(null, '', window.location.pathname);
+            }
+        })();
+    </script>
+
+    <p>
+        <a href="login.html">Volver al login</a>
+    </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WorkSafe | Login</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+<div class="login-box">
+    <div class="login-form">
+        <h2>Bienvenido a WorkSafe</h2>
+        <p class="subtitle">Sistema de Seguridad Laboral</p>
+
+        <form action="login.php" method="POST" class="login-formulario">
+            <div id="error" style="display:none;color:#b00020;margin-bottom:12px;"></div>
+            <input type="email" name="email" placeholder="Correo corporativo" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+
+        <p class="register-text">
+            ¿No tienes cuenta?
+            <a href="register.html">Regístrate aquí</a>
+        </p>
+    </div>
+    <div class="login-logo">
+        <img src="./assets/img/logo.png" alt="Logo WorkSafe">
+        <h3>WorkSafe</h3>
+        <span>Prevención · Control · Seguridad</span>
+    </div>
+</div>
+</body>
+<script>
+    (function(){
+        const params = new URLSearchParams(window.location.search);
+        const err = params.get('error');
+        if (err) {
+            const el = document.getElementById('error');
+            if (el) {
+                el.textContent = err;
+                el.style.display = 'block';
+            }
+            history.replaceState(null, '', window.location.pathname);
+        }
+    })();
+</script>
+</html>
