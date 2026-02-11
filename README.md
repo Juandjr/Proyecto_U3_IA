@@ -55,7 +55,7 @@ Si todo está correcto:
 3. Ingresar a:
 
 ```
-http://localhost/InterfazProyecto
+http://localhost/InterfazProyecto/web
 ```
 
 4. Iniciar sesión con un usuario registrado.
