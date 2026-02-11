@@ -93,12 +93,12 @@ http://localhost/InterfazProyecto/web
 ```
 Proyecto_U3_IA/
 │
-├── InterfazProyecto/       # Sistema web (Login, Registro, Dashboard)
+├── web/       # Sistema web (Login, Registro, Dashboard)
 ├── yolo_app/               # Sistema de detección
 │   ├── detection.py
-│   ├── models/
-│   └── runs/
-├── database/
+│   ├── whatsapp.py
+│   └── modelo
+├── sql/
 └── README.md
 ```
 
